@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Navbar from "./Navbar";
 import CatList from "./CatList";
 import Cat from "./Cat";
@@ -27,6 +27,8 @@ function App() {
         path="/cat/:catName"
         render={routerProps => <Cat {...routerProps} cats={availableCats} />}
       />
+
+      <Redirect to="/cat" />
     </div>
   );
 }
